@@ -1,0 +1,32 @@
+{
+  "name": "filtrex",
+  "version": "0.1.0",
+  "description": "A simple, safe, ElasticSearch Query compiler",
+  "main": "filtres.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha tests/",
+    "build": "cat src/filtres.js src/jison.js > filtres.js && uglify -s filtres.js -o filtres.min.js",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/abeisgreat/FiltrES.git"
+  },
+  "keywords": [
+    "elasticsearch",
+    "query",
+    "dsl"
+  ],
+  "author": "Abraham Haskins <abe@rigidflame.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abeisgreat/FiltrES/issues"
+  },
+  "devDependencies": {
+    "elasticsearchclient": "~0.5.3",
+    "mocha": "~2.0.1"
+  }
+}

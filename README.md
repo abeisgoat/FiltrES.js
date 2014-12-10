@@ -4,7 +4,7 @@ FiltrES ([Filtrex](https://github.com/joewalnes/filtrex) for ElasticSearch)
 A simple, safe, ElasticSearch query engine, allowing end-users to enter arbitrary expressions without p0wning you or learning the ElasticSearch Query language.
 
 ````python
-(height <= 73 or (color == "green" and height != 73)) and firstname ~= "o.+"
+(height <= 73 or (faovirtes.color == "green" and height != 73)) and firstname ~= "o.+"
 ````
 
 Why?
@@ -29,18 +29,20 @@ Get it
 
 *    **DOWNLOAD [filtres.js](https://rawgit.com/abeisgreat/filtres/master/filtres.js)**
 
-10 second tutorial
+10 second tutorial (using [ElasticSearchClient](https://github.com/phillro/node-elasticsearch-client))
 ------------------
 
 ````javascript
 // A search filter
-var expression = 'transactions <= 5 and abs(profit) > 20.5';
+var expression = 'transactions <= 5 and profit > 20.5';
 
 // Compile expression to executable function
 var myQuery = filters.compile(expression);
 
-// Execute function
-// EXAMPLE HTTP REQUEST
+// Execute query
+esc.search("filtres", "accounts", myQuery, function (err, accounts) {
+    ...
+});
 ````
 
 Expressions
