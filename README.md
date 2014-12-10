@@ -97,5 +97,5 @@ Here: [Source](https://github.com/joewalnes/filtrex/blob/master/test/filtrex-tes
 
 Calling `filters.compile()` with a malformed expression will throw an exception. You can catch that and display feedback to the user. A good UI pattern is to attempt to compile on each keystroke and continuously indicate whether the expression is valid.
 
-And **[follow @abeisgreat](https://twitter.com/abeisgreat)** ([FiltrES](https://github.com/abeisgreat/filtrES) and **[follow @joewalnes](https://twitter.com/joewalnes)** ([Filtrex](https://github.com/joewalnes/filtrex)!
+And **[follow @abeisgreat](https://twitter.com/abeisgreat)** ([FiltrES](https://github.com/abeisgreat/filtrES) and **[follow @joewalnes](https://twitter.com/joewalnes)** ([Filtrex](https://github.com/joewalnes/filtrex))!
 
