@@ -37,7 +37,7 @@ Get it
 var expression = 'transactions <= 5 and profit > 20.5';
 
 // Compile expression to executable function
-var myQuery = filters.compile(expression);
+var myQuery = filtres.compile(expression);
 
 // Execute query
 esc.search("filtres", "accounts", myQuery, function (err, accounts) {
