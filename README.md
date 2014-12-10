@@ -1,7 +1,7 @@
-FiltrES (Filtrex for ElasticSearch)
+FiltrES ([Filtrex](https://github.com/joewalnes/filtrex) for ElasticSearch)
 =======
 
-A simple, safe, ElasticSearch query engine, allowing end-users to enter arbitrary expressions without p0wning you, using the ElasticSearch Query language, or using ElasticSearch's "script" filters.
+A simple, safe, ElasticSearch query engine, allowing end-users to enter arbitrary expressions without p0wning you or learning the ElasticSearch Query language.
 
 ````python
 (height <= 73 or (color == "green" and height != 73)) and firstname ~= "o.+"
@@ -22,7 +22,6 @@ Features
 *   **Simple!** End user expression language looks like this `transactions <= 5 and profit > 20.5`
 *   **Fast!** Expressions get compiled into native ElasticSearch queries, offering the same performance as if it had been hand coded. e.g. `{"filtered" : {"filter" : {"bool" : {"must" : {"term" : { "tag" : "wow" }}, "must_not" : {"range" : {"age" : { "from" : 10, "to" : 20 }}}`
 *   **Safe!** Expressions cannot escape the sandbox client-side or inside of ElasticSearch.
-*   **Pluggable!** Add your own data.
 *   **Predictable!** Because users can't define loops or recursive functions, you know you won't be left hanging.
 
 Get it
@@ -98,5 +97,5 @@ Here: [Source](https://github.com/joewalnes/filtrex/blob/master/test/filtrex-tes
 
 Calling `filters.compile()` with a malformed expression will throw an exception. You can catch that and display feedback to the user. A good UI pattern is to attempt to compile on each keystroke and continuously indicate whether the expression is valid.
 
-And **[follow @joewalnes](https://twitter.com/joewalnes)** and **[@abeisgreat](https://twitter.com/abeisgreat)**!
+And **[follow @abeisgreat](https://twitter.com/abeisgreat)** ([FiltrES](https://github.com/abeisgreat/filtrES) and **[follow @joewalnes](https://twitter.com/joewalnes)** ([Filtrex](https://github.com/joewalnes/filtrex)!
 

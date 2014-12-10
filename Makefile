@@ -1,2 +1,2 @@
-filtrex.js: src/filtrex.js src/jison.js
+filtrex.js: src/filtres.js src/jison.js
 	cat $^ > $@
