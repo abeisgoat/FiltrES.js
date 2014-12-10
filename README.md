@@ -27,7 +27,7 @@ Features
 Get it
 ------
 
-*    **DOWNLOAD [filtres.js](https://rawgit.com/abeisgreat/filtres/master/filtres.js)**
+*    **DOWNLOAD [filtres.js](https://rawgit.com/abeisgreat/filtres/master/filtres.js) or [filtres.min.js](https://rawgit.com/abeisgreat/filtres/master/filtres.min.js)**
 
 10 second tutorial (using [ElasticSearchClient](https://github.com/phillro/node-elasticsearch-client))
 ------------------
@@ -93,7 +93,7 @@ Because it was originally built for FILTeR EXpressions then ported to ElasticSea
 
 **Unit tests?**
 
-Here: [Source](https://github.com/joewalnes/filtrex/blob/master/test/filtrex-test.html), [Results](https://rawgit.com/joewalnes/filtrex/master/test/filtrex-test.html)
+[Here!](https://github.com/abeisgreat/filtres/blob/master/test/filtrex-test.js).
 
 **What happens if the expression is malformed?**
 

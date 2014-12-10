@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "elasticsearchclient": "~0.5.3",
-    "mocha": "~2.0.1"
+    "mocha": "~2.0.1",
+    "uglify": "~0.1.1"
   }
 }
