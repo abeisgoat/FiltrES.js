@@ -93,7 +93,7 @@ Because it was originally built for FILTeR EXpressions then ported to ElasticSea
 
 **Unit tests?**
 
-[Here!](https://github.com/abeisgreat/filtres/blob/master/test/filtrex-test.js).
+[Here!](https://github.com/abeisgreat/filtres/blob/master/test/filtres-test.js)
 
 **What happens if the expression is malformed?**
 

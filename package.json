@@ -1,5 +1,5 @@
 {
-  "name": "filtrex",
+  "name": "filtres",
   "version": "0.1.0",
   "description": "A simple, safe, ElasticSearch Query compiler",
   "main": "filtres.js",
