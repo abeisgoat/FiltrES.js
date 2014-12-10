@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>FiltrES Test</title>
+		<script src="./src/filtrex.js"></script>
+		<script src="./src/jison.js"></script>
+    	<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
+		<script>
+			var expression = 'transactions <= 5 and profit > 20.5',
+				expression = '(height <= 73 or (color == "green" and height != 73)) and firstname ~= "o.+"';
+
+			var getQuery = filtres.compile(expression);
+
+	        var URL = "https://bucket.firebaseio.com/flashlight",
+	            index = "firebase",
+	            type = "user",
+	            ref = new Firebase(URL + '/search2'),
+	            query = getQuery();
+            
+            var key = ref.child('request').push({ index: index, type: type, query: query }).key();
+            
+            console.log('search', key, { index: index, type: type, query: query });
+            
+            ref.child('response/'+key).on('value', function (snap) {
+            	console.log(snap.val())
+            });
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
