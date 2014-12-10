@@ -4,7 +4,7 @@ FiltrES ([Filtrex](https://github.com/joewalnes/filtrex) for ElasticSearch)
 A simple, safe, ElasticSearch query engine, allowing end-users to enter arbitrary expressions without p0wning you or learning the ElasticSearch Query language.
 
 ````python
-(height <= 73 or (faovirtes.color == "green" and height != 73)) and firstname ~= "o.+"
+(height <= 73 or (favorites.color == "green" and height != 73)) and firstname ~= "o.+"
 ````
 
 Why?
