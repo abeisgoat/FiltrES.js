@@ -10,7 +10,7 @@ A simple, safe, ElasticSearch query engine, allowing end-users to enter arbitrar
 Why?
 ----
 
-There are many cases where you want a user to be able enter an arbitrary expression through a user interface, but the ElasticSearch Query language is complicated (to say the least). 
+There are many cases where you want a user to be able enter an arbitrary expression through a user interface or simply avoid ElasticSearch's powerful, but complicated query language.
 
 Sure, you could do that with ElasticSearch's "script" filter, but I'm sure I don't have to tell you how stupid that would be. It opens up many potential security issues.
 
