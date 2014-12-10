@@ -1,5 +1,6 @@
 FiltrES ([Filtrex](https://github.com/joewalnes/filtrex) for ElasticSearch)
 =======
+*Pronounced like Fortress*
 
 A simple, safe, ElasticSearch query engine, allowing you or your end-users to enter arbitrary expressions without p0wning you or learning the ElasticSearch Query language.
 
