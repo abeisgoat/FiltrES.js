@@ -73,7 +73,7 @@ Boolean logic | Description
 x or y | Boolean or
 x and y | Boolean and
 not x | Boolean not
-( x ) | Explicity operator precedence
+( x ) | Explicitly operator precedence
 
 Operator precedence follows that of any sane language.
 
