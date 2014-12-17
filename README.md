@@ -92,7 +92,7 @@ Because it was originally built for FILTeR EXpressions then ported to ElasticSea
 
 [MIT](https://github.com/abeisgreat/filtres/raw/master/LICENSE)
 
-**Unit tests?**
+**Tests?**
 
 [Here!](https://github.com/abeisgreat/filtres/blob/master/test/filtres-test.js)
 
