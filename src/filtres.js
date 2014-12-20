@@ -1,5 +1,5 @@
 /**
- * FiltrES provides compileExpression() to compile user expressions to an ElasticSearch query.
+ * FiltrES provides filtres.compile() to compile user expressions to an ElasticSearch query.
  *
  * See https://github.com/abeisgreat/filtres for tutorial, reference and examples.
  * MIT License - based on Filtrex by Joe Walnes (https://github.com/joewalnes/filtrex) 
