@@ -1,7 +1,8 @@
 FiltrES ([Filtrex](https://github.com/joewalnes/filtrex) for ElasticSearch)
 =======
+*Pronounced like Fortress*
 
-A simple, safe, ElasticSearch query engine, allowing end-users to enter arbitrary expressions without p0wning you or learning the ElasticSearch Query language.
+A simple, safe, ElasticSearch query engine, allowing you or your end-users to enter arbitrary expressions without p0wning you or learning the ElasticSearch Query language.
 
 ````python
 (height <= 73 or (favorites.color == "green" and height != 73)) and firstname ~= "o.+"
@@ -10,7 +11,7 @@ A simple, safe, ElasticSearch query engine, allowing end-users to enter arbitrar
 Why?
 ----
 
-There are many cases where you want a user to be able enter an arbitrary expression through a user interface, but the ElasticSearch Query language is complicated (to say the least). 
+There are many cases where you want a user to be able enter an arbitrary expression through a user interface or simply want to avoid ElasticSearch's powerful, but complicated query language.
 
 Sure, you could do that with ElasticSearch's "script" filter, but I'm sure I don't have to tell you how stupid that would be. It opens up many potential security issues.
 
@@ -37,7 +38,7 @@ Get it
 var expression = 'transactions <= 5 and profit > 20.5';
 
 // Compile expression to executable function
-var myQuery = filters.compile(expression);
+var myQuery = filtres.compile(expression);
 
 // Execute query
 esc.search("filtres", "accounts", myQuery, function (err, accounts) {
@@ -72,7 +73,7 @@ Boolean logic | Description
 x or y | Boolean or
 x and y | Boolean and
 not x | Boolean not
-( x ) | Explicity operator precedence
+( x ) | Explicit operator precedence
 
 Operator precedence follows that of any sane language.
 
@@ -91,7 +92,7 @@ Because it was originally built for FILTeR EXpressions then ported to ElasticSea
 
 [MIT](https://github.com/abeisgreat/filtres/raw/master/LICENSE)
 
-**Unit tests?**
+**Tests?**
 
 [Here!](https://github.com/abeisgreat/filtres/blob/master/test/filtres-test.js)
 
