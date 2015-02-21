@@ -46,9 +46,14 @@
 
         if (debug) console.log(expression, tree, js);
 
-        if (queryIsValid) {
+        try {
             return JSON.parse(js.join(''));
-        } else if (failToQuerystring) {
+        } catch (err) {
+            if (debug) console.log(js, err);
+            queryIsValid = false;
+        }
+
+        if (failToQuerystring) {
             return {
                 "query" : {
                     "query_string" : {
