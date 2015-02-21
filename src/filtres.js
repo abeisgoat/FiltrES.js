@@ -10,8 +10,6 @@
  */
 
  (function () {
-    "use strict";
-
     var queryBase = '{"query" : {"filtered" : { "filter": [',
         queryEnd = ']}}}',
         queryCleaner = /\$|\.|\(|\)|\=|\~|\[|\]|\!|\<|\>|\'|\"|\+/g,
@@ -24,37 +22,43 @@
             // once and cache the result in our own function.
             compileExpression.parser = filtrexParser();
         }
-        var tree = compileExpression.parser.parse(expression);
 
-        var js = [];
-        js.push(queryBase);
-        function toJs(node) {
-            if (Array.isArray(node)) {
-                node.forEach(toJs);
-            } else {
-                js.push(node);
+        var tree, queryIsValid = true;
+
+        try {
+            tree = compileExpression.parser.parse(expression);
+
+            var js = [];
+            js.push(queryBase);
+            function toJs(node) {
+                if (Array.isArray(node)) {
+                    node.forEach(toJs);
+                } else {
+                    js.push(node);
+                }
             }
+            tree.forEach(toJs);
+            js.push(queryEnd);
+        } catch (err) {
+            if (debug) console.log(err);
+            queryIsValid = false;
         }
-        tree.forEach(toJs);
-        js.push(queryEnd);
 
         if (debug) console.log(expression, tree, js);
 
-        try {
+        if (queryIsValid) {
             return JSON.parse(js.join(''));
-        } catch (err) {
-            if (failToQuerystring) {
-                return {
-                    "query" : {
-                        "query_string" : {
-                            "query": expression.replace(queryCleaner, '')
-                        }
+        } else if (failToQuerystring) {
+            return {
+                "query" : {
+                    "query_string" : {
+                        "query": expression.replace(queryCleaner, '')
                     }
-                };
-            } else {
-                if (debug) console.log("ERROR", js.join(''));
-                throw err;
-            }
+                }
+            };
+        } else {
+            if (debug) console.log("ERROR", js && js.lenght? js.join('') : 'Parse failed');
+            throw "Invalid Query";
         }
     }
 

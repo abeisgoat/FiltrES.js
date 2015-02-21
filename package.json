@@ -1,6 +1,6 @@
 {
   "name": "filtres",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple, safe, ElasticSearch Query compiler",
   "main": "filtres.js",
   "directories": {
