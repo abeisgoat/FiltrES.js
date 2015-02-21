@@ -14,10 +14,11 @@
 
     var queryBase = '{"query" : {"filtered" : { "filter": [',
         queryEnd = ']}}}',
+        queryCleaner = /\$|\.|\(|\)|\=|\~|\[|\]|\!|\<|\>|\'|\"|\+/g,
         debug = false;
 
 
-    function compileExpression(expression, extraFunctions /* optional */) {
+    function compileExpression(expression, failToQuerystring) {
         if (!compileExpression.parser) {
             // Building the original parser is the heaviest part. Do it
             // once and cache the result in our own function.
@@ -42,8 +43,18 @@
         try {
             return JSON.parse(js.join(''));
         } catch (err) {
-            if (debug) console.log("ERROR", js.join(''))
-            throw err;
+            if (failToQuerystring) {
+                return {
+                    "query" : {
+                        "query_string" : {
+                            "query": expression.replace(queryCleaner, '')
+                        }
+                    }
+                };
+            } else {
+                if (debug) console.log("ERROR", js.join(''));
+                throw err;
+            }
         }
     }
 
